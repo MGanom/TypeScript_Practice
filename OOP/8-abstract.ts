@@ -10,7 +10,7 @@
   }
 
   abstract class CoffeeMachine implements CoffeeMaker {
-    private static BEANS_GRAMM_PER_SHOT: number = 7; // class level
+    private static BEANS_GRAMS_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
 
     constructor(coffeeBeans: number) {
@@ -19,25 +19,25 @@
 
     fillCoffeeBeans(beans: number) {
       if (beans < 0) {
-        throw new Error('value for beans should be greater than 0');
+        throw new Error("value for beans should be greater than 0");
       }
       this.coffeeBeans += beans;
     }
 
     clean() {
-      console.log('cleaning the machine...🧼');
+      console.log("cleaning the machine...🧼");
     }
 
     private grindBeans(shots: number) {
       console.log(`grinding beans for ${shots}`);
-      if (this.coffeeBeans < shots * CoffeeMachine.BEANS_GRAMM_PER_SHOT) {
-        throw new Error('Not enough coffee beans!');
+      if (this.coffeeBeans < shots * CoffeeMachine.BEANS_GRAMS_PER_SHOT) {
+        throw new Error("Not enough coffee beans!");
       }
-      this.coffeeBeans -= shots * CoffeeMachine.BEANS_GRAMM_PER_SHOT;
+      this.coffeeBeans -= shots * CoffeeMachine.BEANS_GRAMS_PER_SHOT;
     }
 
     private preheat(): void {
-      console.log('heating up... 🔥');
+      console.log("heating up... 🔥");
     }
 
     protected abstract extract(shots: number): CoffeeCup;
@@ -54,7 +54,7 @@
       super(beans);
     }
     private steamMilk(): void {
-      console.log('Steaming some milk... 🥛');
+      console.log("Steaming some milk... 🥛");
     }
 
     protected extract(shots: number): CoffeeCup {
@@ -76,13 +76,13 @@
   }
 
   const machines: CoffeeMaker[] = [
-    new CaffeLatteMachine(16, '1'),
+    new CaffeLatteMachine(16, "1"),
     new SweetCoffeeMaker(16),
-    new CaffeLatteMachine(16, '1'),
+    new CaffeLatteMachine(16, "1"),
     new SweetCoffeeMaker(16),
   ];
-  machines.forEach(machine => {
-    console.log('-------------------------');
+  machines.forEach((machine) => {
+    console.log("-------------------------");
     machine.makeCoffee(1);
   });
 }
