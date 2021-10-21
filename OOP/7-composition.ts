@@ -48,7 +48,7 @@
   }
 
   class CoffeeMachine implements CoffeeMaker {
-    private static BEANS_GRAMM_PER_SHOT: number = 7; // class level
+    private static BEANS_GRAMS_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
 
     constructor(coffeeBeans: number) {
@@ -61,25 +61,25 @@
 
     fillCoffeeBeans(beans: number) {
       if (beans < 0) {
-        throw new Error('value for beans should be greater than 0');
+        throw new Error("value for beans should be greater than 0");
       }
       this.coffeeBeans += beans;
     }
 
     clean() {
-      console.log('cleaning the machine...🧼');
+      console.log("cleaning the machine...🧼");
     }
 
     private grindBeans(shots: number) {
       console.log(`grinding beans for ${shots}`);
-      if (this.coffeeBeans < shots * CoffeeMachine.BEANS_GRAMM_PER_SHOT) {
-        throw new Error('Not enough coffee beans!');
+      if (this.coffeeBeans < shots * CoffeeMachine.BEANS_GRAMS_PER_SHOT) {
+        throw new Error("Not enough coffee beans!");
       }
-      this.coffeeBeans -= shots * CoffeeMachine.BEANS_GRAMM_PER_SHOT;
+      this.coffeeBeans -= shots * CoffeeMachine.BEANS_GRAMS_PER_SHOT;
     }
 
     private preheat(): void {
-      console.log('heating up... 🔥');
+      console.log("heating up... 🔥");
     }
 
     private extract(shots: number): CoffeeCup {
@@ -102,7 +102,7 @@
       super(beans);
     }
     private steamMilk(): void {
-      console.log('Steaming some milk... 🥛');
+      console.log("Steaming some milk... 🥛");
     }
     makeCoffee(shots: number): CoffeeCup {
       const coffee = super.makeCoffee(shots);
@@ -128,7 +128,7 @@
     constructor(
       beans: number,
       private sugar: SugarSource,
-      private milk: MilkFrother,
+      private milk: MilkFrother
     ) {
       super(beans);
     }

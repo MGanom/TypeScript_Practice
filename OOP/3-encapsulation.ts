@@ -8,7 +8,7 @@
   // private
   // protected
   class CoffeeMaker {
-    private static BEANS_GRAMM_PER_SHOT: number = 7; // class level
+    private static BEANS_GRAMS_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
 
     private constructor(coffeeBeans: number) {
@@ -21,16 +21,16 @@
 
     fillCoffeeBeans(beans: number) {
       if (beans < 0) {
-        throw new Error('value for beans should be greater than 0');
+        throw new Error("value for beans should be greater than 0");
       }
       this.coffeeBeans += beans;
     }
 
     makeCoffee(shots: number): CoffeeCup {
-      if (this.coffeeBeans < shots * CoffeeMaker.BEANS_GRAMM_PER_SHOT) {
-        throw new Error('Not enough coffee beans!');
+      if (this.coffeeBeans < shots * CoffeeMaker.BEANS_GRAMS_PER_SHOT) {
+        throw new Error("Not enough coffee beans!");
       }
-      this.coffeeBeans -= shots * CoffeeMaker.BEANS_GRAMM_PER_SHOT;
+      this.coffeeBeans -= shots * CoffeeMaker.BEANS_GRAMS_PER_SHOT;
       return {
         shots,
         hasMilk: false,
@@ -56,7 +56,7 @@
     }
     constructor(private firstName: string, public lastName: string) {}
   }
-  const user = new User('Steve', 'Jobs');
+  const user = new User("Steve", "Jobs");
   user.age = 6;
   console.log(user.fullName);
 }
