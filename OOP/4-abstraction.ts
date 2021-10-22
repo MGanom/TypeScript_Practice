@@ -5,6 +5,7 @@
   };
 
   interface CoffeeMaker {
+    // CoffeeMaker라는 규격을 만들었다.
     makeCoffee(shots: number): CoffeeCup;
   }
 
@@ -15,6 +16,7 @@
   }
 
   class CoffeeMachine implements CoffeeMaker, CommercialCoffeeMaker {
+    // CoffeeMkaer의 규격에 맞는 구현을 해야한다. 즉, makeCoffee 함수가 있어야 한다.
     private static BEANS_GRAMS_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
 
@@ -58,6 +60,7 @@
     }
 
     makeCoffee(shots: number): CoffeeCup {
+      // CoffeeMaker의 규격에 맞추기 위한 함수
       this.grindBeans(shots);
       this.preheat();
       return this.extract(shots);
