@@ -1,8 +1,8 @@
 {
   type CoffeeCup = {
     shots: number;
-    hasMilk?: boolean;
-    hasSugar?: boolean;
+    hasMilk?: boolean; // 우유가 들어갈 수도 안들어갈 수도 있다.
+    hasSugar?: boolean; // 설탕이 들어갈 수도 안들어갈 수도 있다.
   };
 
   interface CoffeeMaker {
@@ -81,12 +81,13 @@
       const coffee = super.makeCoffee(shots);
       return {
         ...coffee,
-        hasSugar: true,
+        hasSugar: true, // 설탕이 추가됨
       };
     }
   }
 
   const machines: CoffeeMaker[] = [
+    // 결국엔 CoffeeMaker라는 interface를 상속 받아 왔기 때문에 CoffeeMaker 타입의 배열이라고 할 수 있다.
     new CoffeeMachine(16),
     new CaffeLatteMachine(16, "1"),
     new SweetCoffeeMaker(16),
@@ -96,6 +97,6 @@
   ];
   machines.forEach((machine) => {
     console.log("-------------------------");
-    machine.makeCoffee(1);
+    machine.makeCoffee(1); // interface에 규약된 makeCoffee만 호출할 수 있다.
   });
 }
