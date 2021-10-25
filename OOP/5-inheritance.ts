@@ -60,16 +60,17 @@
 
   class CaffeLatteMachine extends CoffeeMachine {
     constructor(beans: number, public readonly serialNumber: string) {
+      // 새로운 생성자를 만들 때는 부모의 생성자(beans)도 불러와야 한다.
       super(beans);
     }
     private steamMilk(): void {
       console.log("Steaming some milk... 🥛");
     }
     makeCoffee(shots: number): CoffeeCup {
-      const coffee = super.makeCoffee(shots);
+      const coffee = super.makeCoffee(shots); // super를 사용하여 부모의 makeCoffee에 대한 모든 정보를 가져옴.
       this.steamMilk();
       return {
-        ...coffee,
+        ...coffee, // 부모에서 가져온 내용
         hasMilk: true,
       };
     }
