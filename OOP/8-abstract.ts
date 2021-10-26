@@ -10,6 +10,8 @@
   }
 
   abstract class CoffeeMachine implements CoffeeMaker {
+    // abstract를 붙임으로써 이 자체로는 object(instance)를 만들 수가 없다.
+    // 대신 자식 클래스에서 사용 가능한 함수들과 자식 클래스마다 달라질 수 있는 행동들에 대해 정의를 해줄 수 있게 된다.
     private static BEANS_GRAMS_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
 
@@ -41,7 +43,9 @@
     }
 
     protected abstract extract(shots: number): CoffeeCup;
-
+    // 자식 클래스마다 달라질 수 있는 행동에 abstract를 작성해주고 자식 클래스에서 접근을 할 수 있도록 protected도 써준다.
+    // 또한 abstract(추상)적인 사항이기 때문에 구현 내용을 작성하지 않는다.
+    // abstract인 부분은 자식 클래스에서 반드시 작성 돼야 한다.
     makeCoffee(shots: number): CoffeeCup {
       this.grindBeans(shots);
       this.preheat();
@@ -67,6 +71,7 @@
   }
 
   class SweetCoffeeMaker extends CoffeeMachine {
+    // super를 불러오지 않아도 된다.
     protected extract(shots: number): CoffeeCup {
       return {
         shots,
