@@ -3,12 +3,14 @@
 
 ## Basic
 Practicing basic types, type alias, and union type.  
+
 [Calculator](https://github.com/MGanom/TypeScript_Practice/blob/main/Basic/1-calculator.ts) / 
 [Direction](https://github.com/MGanom/TypeScript_Practice/blob/main/Basic/2-game.ts) / 
 [Loading](https://github.com/MGanom/TypeScript_Practice/blob/main/Basic/3-loading.ts)
 
 ## Object Oriented Programming
 Practicing object oriented programming.  
+
 [Without OOP](https://github.com/MGanom/TypeScript_Practice/blob/main/OOP/1-without-oop.ts) / 
 [Class](https://github.com/MGanom/TypeScript_Practice/blob/main/OOP/2-class.ts) / 
 [Encapsulation](https://github.com/MGanom/TypeScript_Practice/blob/main/OOP/3-encapsulation.ts) /  
@@ -21,6 +23,7 @@ Practicing object oriented programming.
 
 ## Generics
 Practicing generics.  
+
 [Function](https://github.com/MGanom/TypeScript_Practice/blob/main/Generics/1-function.ts) / 
 [Class](https://github.com/MGanom/TypeScript_Practice/blob/main/Generics/2-class.ts) / 
 [Constraints](https://github.com/MGanom/TypeScript_Practice/blob/main/Generics/3-constraints.ts) / 
@@ -29,12 +32,14 @@ Practicing generics.
 
 ## Handling Errors
 Practicing how to handle errors with TypeScript.  
+
 [Exception](https://github.com/MGanom/TypeScript_Practice/blob/main/Exception/1-exception.ts) / 
 [Handling](https://github.com/MGanom/TypeScript_Practice/blob/main/Exception/2-handling.ts) / 
 [State](https://github.com/MGanom/TypeScript_Practice/blob/main/Exception/3-state.ts)
 
 ## Adavnced
 Practicing advanced methods of TypeScript in various situations.  
+
 [Interface](https://github.com/MGanom/TypeScript_Practice/blob/main/Advanced/1-interface.ts) / 
 [Index](https://github.com/MGanom/TypeScript_Practice/blob/main/Advanced/2-index.ts) / 
 [Mapped](https://github.com/MGanom/TypeScript_Practice/blob/main/Advanced/3-mapped.ts) /  
